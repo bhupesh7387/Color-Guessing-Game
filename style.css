@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+body.startBody {
+  -webkit-animation: bodyStart 1s ease-in forwards;
+          animation: bodyStart 1s ease-in forwards;
+}
+
+@-webkit-keyframes bodyStart {
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bodyStart {
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+#heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80vw;
+  padding: 1em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: greenyellow;
+}
+
+#heading h2 {
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(255, 255, 255, 0.8);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(255, 255, 255, 0.8);
+  padding: 0.4rem;
+  font-size: xx-large;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#heading h4 {
+  padding: 1rem;
+  font-size: x-large;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#colorOptions {
+  margin-top: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em;
+}
+
+#colorOptions #colors {
+  text-align: center;
+}
+
+#colorOptions #colors .color {
+  -webkit-appearance: none;
+  width: 10vw;
+  height: 10vw;
+  margin: 10px;
+  border: 5px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5)) drop-shadow(-3px -3px 5px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5)) drop-shadow(-3px -3px 5px rgba(0, 0, 0, 0.5));
+}
+
+#colorOptions #colors .color:checked[type="radio"] {
+  border-color: black;
+}
+
+#winningColorRGB {
+  padding: 0.25rem;
+  margin: 2em;
+  margin-bottom: 0;
+  font-size: xx-large;
+  font-weight: bolder;
+  -webkit-animation: animateHint 10s ease infinite;
+          animation: animateHint 10s ease infinite;
+  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  text-align: center;
+}
+
+@-webkit-keyframes animateHint {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes animateHint {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+#playAgain button {
+  margin-top: 20px;
+  background-color: greenyellow;
+  -webkit-box-shadow: 5px 5px 15px black;
+          box-shadow: 5px 5px 15px black;
+  display: none;
+  padding: 0.6em;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
