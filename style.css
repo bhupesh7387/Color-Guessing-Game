@@ -26,6 +26,8 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
   -webkit-transition: background-color 1s ease;
   transition: background-color 1s ease;
   -webkit-transform: scale(0);
@@ -57,10 +59,10 @@ body.startBody {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -74,13 +76,66 @@ body.startBody {
   background-color: greenyellow;
 }
 
-#heading h2 {
-  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(255, 255, 255, 0.8);
-          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15), -3px -3px 10px rgba(255, 255, 255, 0.8);
+#heading .cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3), -3px -3px 10px rgba(255, 255, 255, 0.8);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3), -3px -3px 10px rgba(255, 255, 255, 0.8);
   padding: 0.4rem;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#heading .img-cont {
+  -webkit-filter: drop-shadow(5px 5px 10px);
+          filter: drop-shadow(5px 5px 10px);
+}
+
+#heading .img-cont img {
+  width: 4rem;
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+  -webkit-animation: wheel-rotate 3s linear infinite forwards;
+          animation: wheel-rotate 3s linear infinite forwards;
+}
+
+#heading h2 {
   font-size: xx-large;
   border-radius: 5px;
   text-align: center;
+}
+
+@-webkit-keyframes wheel-rotate {
+  from {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+@keyframes wheel-rotate {
+  from {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
 }
 
 #colorOptions {
@@ -106,6 +161,7 @@ body.startBody {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   text-align: center;
+  margin-bottom: 0.25em;
 }
 
 #colorOptions #colors {
@@ -130,9 +186,9 @@ body.startBody {
 
 #winningColorRGB {
   padding: 0.25rem;
-  margin: 2em;
-  margin-bottom: 0;
-  font-size: xx-large;
+  margin: 0.5em;
+  margin-top: 1.25em;
+  font-size: 1.5rem;
   font-weight: bolder;
   -webkit-animation: animateHint 10s ease infinite;
           animation: animateHint 10s ease infinite;
@@ -148,8 +204,8 @@ body.startBody {
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.35);
-            transform: scale(1.35);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
   100% {
     -webkit-transform: scale(1);
@@ -163,8 +219,8 @@ body.startBody {
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.35);
-            transform: scale(1.35);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
   100% {
     -webkit-transform: scale(1);
@@ -173,6 +229,7 @@ body.startBody {
 }
 
 #result {
+  margin-top: -1.25em;
   padding: 0.25rem;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
@@ -190,5 +247,34 @@ body.startBody {
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.credit {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 1.25rem;
+  color: black;
+}
+
+@media (max-width: 400px) {
+  .credit {
+    font-size: 1rem;
+  }
+  #heading .img-cont img {
+    width: 3rem;
+  }
+  #winningColorRGB {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .credit {
+    font-size: 0.75rem;
+  }
+  #heading h2 {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
