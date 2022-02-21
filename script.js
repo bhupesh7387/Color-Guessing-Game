@@ -54,11 +54,13 @@ function startGame() {
         colorOption.addEventListener("click", () => {
             if (color.red == winColor.red && color.blue == winColor.blue && color.green == winColor.green) {
                 ResultContent.innerHTML = "You Guessed it Right."
+                ResultContent.style.color = 'rgb(40, 0, 255)'
                 document.body.style.backgroundColor = `rgb(${winColor.red}, ${winColor.blue}, ${winColor.green})`
             }
 
             else {
                 ResultContent.innerHTML = "You Guessed it Wrong."
+                ResultContent.style.color = 'Red'
                 document.body.style.backgroundColor = `rgb(${winColor.red}, ${winColor.blue}, ${winColor.green})`
             }
             // let playAgain = document.querySelector("#playAgain button")
@@ -90,7 +92,7 @@ function startGame() {
 
     // Manipulating The Correct Option
     correctOptionNumber = random(1, 6)
-    // console.log(correctOptionNumber)
+    console.log(correctOptionNumber)
 
     manipulateCorrectOption(1, color1)
     manipulateCorrectOption(2, color2)

@@ -10,7 +10,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -83,13 +83,6 @@ body.startBody {
   text-align: center;
 }
 
-#heading h4 {
-  padding: 1rem;
-  font-size: x-large;
-  text-align: center;
-  text-decoration: underline;
-}
-
 #colorOptions {
   margin-top: 2vh;
   display: -webkit-box;
@@ -103,6 +96,16 @@ body.startBody {
       -ms-flex-align: center;
           align-items: center;
   padding: 2em;
+}
+
+#colorOptions h4 {
+  padding: 0.5rem;
+  font-size: x-large;
+  text-align: center;
+  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  text-align: center;
 }
 
 #colorOptions #colors {
@@ -145,8 +148,8 @@ body.startBody {
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.35);
+            transform: scale(1.35);
   }
   100% {
     -webkit-transform: scale(1);
@@ -160,13 +163,20 @@ body.startBody {
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.35);
+            transform: scale(1.35);
   }
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+#result {
+  padding: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  text-align: center;
 }
 
 #playAgain button {
