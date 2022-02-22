@@ -14,19 +14,14 @@
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.6fr 0.35fr 0.25fr 0.25fr 0.25fr;
+      grid-template-rows: 0.6fr 0.35fr 0.25fr 0.25fr 0.25fr;
+  justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 100vw;
   height: 100vh;
   -webkit-transition: background-color 1s ease;
   transition: background-color 1s ease;
@@ -56,6 +51,8 @@ body.startBody {
 }
 
 #heading {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,7 +108,7 @@ body.startBody {
 }
 
 #heading h2 {
-  font-size: xx-large;
+  font-size: 2rem;
   border-radius: 5px;
   text-align: center;
 }
@@ -139,7 +136,6 @@ body.startBody {
 }
 
 #colorOptions {
-  margin-top: 2vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,7 +157,6 @@ body.startBody {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   text-align: center;
-  margin-bottom: 0.25em;
 }
 
 #colorOptions #colors {
@@ -186,50 +181,25 @@ body.startBody {
 
 #winningColorRGB {
   padding: 0.25rem;
-  margin: 0.5em;
-  margin-top: 1.25em;
   font-size: 1.5rem;
   font-weight: bolder;
-  -webkit-animation: animateHint 10s ease infinite;
-          animation: animateHint 10s ease infinite;
   text-decoration: underline;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   text-align: center;
-}
-
-@-webkit-keyframes animateHint {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes animateHint {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+  margin-top: 5px;
 }
 
 #result {
-  margin-top: -1.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+  padding: 7px;
+}
+
+#ResultContent {
   padding: 0.25rem;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
@@ -237,29 +207,37 @@ body.startBody {
 }
 
 #playAgain button {
-  margin-top: 20px;
   background-color: greenyellow;
   -webkit-box-shadow: 5px 5px 15px black;
           box-shadow: 5px 5px 15px black;
   display: none;
   padding: 0.6em;
+  text-align: center;
   font-size: larger;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 .credit {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
+  text-align: center;
   font-size: 1.25rem;
   color: black;
+}
+
+@media (max-width: 525px) {
+  #result {
+    font-size: 0.75rem !important;
+  }
 }
 
 @media (max-width: 400px) {
   .credit {
     font-size: 1rem;
+  }
+  #heading h2 {
+    font-size: 1.5rem;
   }
   #heading .img-cont img {
     width: 3rem;
@@ -267,11 +245,14 @@ body.startBody {
   #winningColorRGB {
     font-size: 1rem;
   }
+  #result {
+    font-size: 0.5rem !important;
+  }
 }
 
 @media (max-width: 300px) {
   .credit {
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
   }
   #heading h2 {
     font-size: 1rem;
